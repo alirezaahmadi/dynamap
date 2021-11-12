@@ -1,6 +1,11 @@
 # Prerequisites
 *.d
 
+# forlders 
+build/
+devel/
+logs/
+.catkin_tools/
 # Compiled Object files
 *.slo
 *.lo
