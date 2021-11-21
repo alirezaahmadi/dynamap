@@ -2,7 +2,7 @@
 Project : Registration Techniques for Non-rigid Objects
 by: Alireza Ahamdi, 
 
-[![IMAGE ALT TEXT HERE](https://youtu.be/Nr2SV6QNiAs/0.jpg)](https://youtu.be/Nr2SV6QNiAs)
+[![YouTube Demo](https://youtu.be/Nr2SV6QNiAs/0.jpg)](https://youtu.be/Nr2SV6QNiAs)
 
 
 In general, the problem of non-rigid registration is about matching two different
