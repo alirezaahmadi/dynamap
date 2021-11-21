@@ -1,6 +1,10 @@
 # DynaMap
 Project : Registration Techniques for Non-rigid Objects
 by: Alireza Ahamdi, 
+
+[![IMAGE ALT TEXT HERE](https://youtu.be/Nr2SV6QNiAs/0.jpg)](https://youtu.be/Nr2SV6QNiAs)
+
+
 In general, the problem of non-rigid registration is about matching two different
 scans of a dynamic object taken at two different points in time. These scans
 can undergo both rigid motions and non-rigid deformations. Since new parts
