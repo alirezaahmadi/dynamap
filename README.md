@@ -17,6 +17,12 @@ deformations while having a significant amount of overlapping area [28]. The
 problem which this thesis is addressing is about mapping deforming objects and
 localizing camera in the environment at the same time.
 
+<div align="center">
+	<img src="/doc/nr.png" alt="cadf" width="300" title="cadf"/>
+	<img src="/doc/warpfield.png" alt="robotoutside" width="300" title="robotoutside"/>
+	<img src="/doc/warpfield_data.png" alt="oldrobot" width="200" title="oldrobot"/>
+</div>
+
 In this thesis, we contribute to the subject of the SLAM problem, where a
 robotic agent navigates in the environment and constructs a dense 3D map of
 the surrounding static and dynamic objects. In this section, we describe the
