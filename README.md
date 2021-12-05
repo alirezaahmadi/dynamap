@@ -2,8 +2,8 @@
 Project : Registration Techniques for Non-rigid Objects
 by: Alireza Ahamdi, 
 
-[![YouTube Demo](https://youtu.be/Nr2SV6QNiAs/0.jpg)](https://youtu.be/Nr2SV6QNiAs)
-
+[![YouTube Demo](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CJjKtI0G&rs=AOn4CLBwjGscXN-kQJpikxeKi1NQxy70DA)](https://youtu.be/Nr2SV6QNiAs)
+[![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CJzOtI0G&rs=AOn4CLA0FQo4gyIlYsnJCvbMmEHfiGIf6Q)](https://www.youtube.com/watch?v=cDG6tOieziQ)
 
 In general, the problem of non-rigid registration is about matching two different
 scans of a dynamic object taken at two different points in time. These scans
