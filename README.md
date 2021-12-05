@@ -64,9 +64,15 @@ CUDA libraries to reach real-time performance.
 ## Citation
 ---
 
+```bash
+
 @article{ahmadi2021registration,
   title={Registration Techniques for Deformable Objects},
   author={Ahmadi, Alireza},
   journal={arXiv preprint arXiv:2111.04053},
   year={2021}
 }
+
+```
+
+
