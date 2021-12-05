@@ -1,9 +1,10 @@
 # DynaMap
 ## Project : Registration Techniques for Non-rigid Objects
 by: Alireza Ahamdi, 
-
+<div align="center">
 [![YouTube Demo](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CJjKtI0G&rs=AOn4CLBwjGscXN-kQJpikxeKi1NQxy70DA)](https://youtu.be/Nr2SV6QNiAs)
 [![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CJzOtI0G&rs=AOn4CLA0FQo4gyIlYsnJCvbMmEHfiGIf6Q)](https://www.youtube.com/watch?v=cDG6tOieziQ)
+</div>
 
 In general, the problem of non-rigid registration is about matching two different
 scans of a dynamic object taken at two different points in time. These scans
@@ -18,9 +19,8 @@ problem which this thesis is addressing is about mapping deforming objects and
 localizing camera in the environment at the same time.
 
 <div align="center">
-	<img src="/doc/nr.png" alt="cadf" width="300" title="cadf"/>
-	<img src="/doc/warpfield.png" alt="robotoutside" width="300" title="robotoutside"/>
-	<img src="/doc/warpfield_data.png" alt="oldrobot" width="200" title="oldrobot"/>
+	<img src="/doc/nr.png" alt="cadf" width="400" title="cadf"/>
+	<img src="/doc/warpfield.png" alt="robotoutside" width="400" title="robotoutside"/>
 </div>
 
 In this thesis, we contribute to the subject of the SLAM problem, where a
@@ -46,6 +46,9 @@ in the context of dense 3D mapping. All the methods are designed to work
 online on real-world data. Also, all algorithms are developed using C++ and
 CUDA libraries to reach real-time performance.
 
+<div align="center">
+	<img src="/doc/warpfield_data.png" alt="oldrobot" width="400" title="oldrobot"/>
+</div>
 
 ## Installation
 
