@@ -59,7 +59,11 @@ CUDA libraries to reach real-time performance.
 
 ## Deployment
 
-## Test
+## **Contribution**
+
+Any contribution is highly appreciated 
+dont hesitate to contact me! 
+alireza.ahmadi@uni-bonn.de
 
 ## Citation
 ---
