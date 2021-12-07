@@ -8,7 +8,7 @@ by: Alireza Ahamdi,
 	
 [![YouTube Demo](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CKLuvI0G&rs=AOn4CLBC9fBXmokbUYNog4GzBFnTqiv2Mg)](https://youtu.be/Nr2SV6QNiAs)
 	
-[![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CJzOtI0G&rs=AOn4CLA0FQo4gyIlYsnJCvbMmEHfiGIf6Q)](https://www.youtube.com/watch?v=cDG6tOieziQ)
+[![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CKzhvI0G&rs=AOn4CLCNhiqWK1_6RaUk-g5Dw3olds6eZA)](https://youtu.be/cDG6tOieziQ)
 	
 </div>
 
