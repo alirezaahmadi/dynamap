@@ -1,5 +1,5 @@
 <package>
-  <name>dynaMap</name>
+  <name>dynamap</name>
   <version>0.0.1</version>
   <description>non-rigid mapping</description>
   <maintainer email="alireza.ahmadi@uni-bonn.de">Alireza Ahmadi</maintainer>

@@ -57,6 +57,18 @@ CUDA libraries to reach real-time performance.
 
 ## Installation
 
+
+install dependencies:
+
+sudo apt install build-essential
+
+sudo apt install gcc-6 g++-6
+make sure gcc6 is selected
+sudo update-alternatives --config gcc
+or
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 60
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60
+
 ## Deployment
 
 ## **Contribution**
