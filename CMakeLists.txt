@@ -40,9 +40,6 @@ find_package(PCL 1.7 REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(Eigen3 3.3.7 REQUIRED)
 find_package(catkin COMPONENTS 
-     robovision 
-     glow
-     projection_example
      message_generation
      genmsg
      roscpp
@@ -56,9 +53,6 @@ find_package(catkin COMPONENTS
 
 catkin_package(
   CATKIN_DEPENDS
-    glow
-    robovision
-    projection_example
     std_msgs
     message_runtime
     sensor_msgs
