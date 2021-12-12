@@ -77,9 +77,11 @@ wget https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip
 - `sudo make install`
 
 ### How to install GLFW
+```
 sudo apt-get update 
 sudo apt-get install libglfw3 libglfw3-dev libglew-dev libglm-dev 
 sudo apt-get install libsoil-dev libglm-dev libassimp-dev libglew-dev libglfw3-dev libxinerama-dev libxcursor-dev libxi-dev
+```
 
 
 ## Deployment
