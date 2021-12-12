@@ -58,6 +58,10 @@ CUDA libraries to reach real-time performance.
 
 ## Installation
 ```
+
+sudo apt install nvidia-cuda-toolkit
+nvcc -V
+
 sudo apt install build-essential
 
 sudo apt install gcc-6 g++-6
