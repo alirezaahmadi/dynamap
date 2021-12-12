@@ -7,6 +7,7 @@ by: Alireza Ahamdi,
 <div align="center">
 	
 [![YouTube Demo](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CKLuvI0G&rs=AOn4CLBC9fBXmokbUYNog4GzBFnTqiv2Mg)](https://youtu.be/Nr2SV6QNiAs)
+	
 [![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CKzhvI0G&rs=AOn4CLCNhiqWK1_6RaUk-g5Dw3olds6eZA)](https://youtu.be/cDG6tOieziQ)
 	
 </div>
@@ -56,7 +57,7 @@ CUDA libraries to reach real-time performance.
 </div>
 
 ## Installation
-
+```
 sudo apt install build-essential
 
 sudo apt install gcc-6 g++-6
@@ -65,6 +66,7 @@ sudo update-alternatives --config gcc
 or
 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 60
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60
+```
 
 ### Eigen
 wget https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip 
