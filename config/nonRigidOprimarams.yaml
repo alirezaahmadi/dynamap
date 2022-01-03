@@ -1,0 +1,9 @@
+# Non-Rigid Consts
+expWeight: True
+NODE_NUM: 273
+dgw: 0.015f
+EPSILLON: 0.000006
+#  Regularization term wight
+LAMBDA: 0.0f   
+# // 8 3 true 273 0.015f 1e-5 0.01f
+# // test 300, 16, 0.5, LAMBDA 0.2 

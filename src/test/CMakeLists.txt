@@ -41,22 +41,29 @@
 #     ${PROJECT_NAME}_gui
 # )
 
-add_executable(testDynaMap testDynaMap.cpp)
-target_link_libraries(testDynaMap
-    ${PROJECT_NAME}_core
-    ${PROJECT_NAME}_cuda
-    ${PROJECT_NAME}_gui
-)
+# add_executable(testDynaMap testDynaMap.cpp)
+# target_link_libraries(testDynaMap
+#     ${PROJECT_NAME}_core
+#     ${PROJECT_NAME}_cuda
+#     ${PROJECT_NAME}_gui
+# )
 
-add_executable(testDynaMapGUI testDynaMapGUI.cpp)
-target_link_libraries(testDynaMapGUI
-    ${PROJECT_NAME}_core
-    ${PROJECT_NAME}_cuda
-    ${PROJECT_NAME}_gui
-)
+# add_executable(testDynaMapGUI testDynaMapGUI.cpp)
+# target_link_libraries(testDynaMapGUI
+#     ${PROJECT_NAME}_core
+#     ${PROJECT_NAME}_cuda
+#     ${PROJECT_NAME}_gui
+# )
 
 # add_executable(glfwWindow glfwWindow.cpp)
 # target_link_libraries(glfwWindow
+#     ${PROJECT_NAME}_core
+#     ${PROJECT_NAME}_cuda
+#     ${PROJECT_NAME}_gui
+# )
+
+# add_executable(testgui testgui.cpp)
+# target_link_libraries(testgui
 #     ${PROJECT_NAME}_core
 #     ${PROJECT_NAME}_cuda
 #     ${PROJECT_NAME}_gui

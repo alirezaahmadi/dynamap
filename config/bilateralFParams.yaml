@@ -1,0 +1,5 @@
+# Initializing GaussianKernel for Bilateral Filter **************************
+bilateralFParams:
+  - diameter: 8
+  - sigmaI: 10.0
+  - sigmaS: 1.0

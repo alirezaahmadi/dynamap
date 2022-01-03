@@ -20,15 +20,11 @@
 #define KNN 		4
 #define KDTREE_MAX_DIM 	3
 
-#define expWeight 	true
-#define NODE_NUM    273
-#define dgw 		0.015f
-#define EPSILLON  	1e-6
-#define LAMBDA    	0.0f   // Regularization term wight
-// 8 3 true 273 0.015f 1e-5 0.01f
-// test 300, 16, 0.5, LAMBDA 0.2 
-
+// Inex convertors 
 #define IDX2C(i,j,ld) (((j)*(ld))+(i))
 #define IDX2F(i,j,ld) ((((j)-1)*(ld))+((i)-1))
 
+// size of variabels
 #define SIZE_OF(x) sizeof(x)/sizeof(x[0])
+
+

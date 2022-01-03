@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- <node type="rviz" name="rviz" pkg="rviz" /> -->
+
+  <!-- <node pkg="rosbag" type="play" name="player" args=" -r 1 /home/alireza/Desktop/rgbd_dataset_freiburg1_xyz.orig.bag"/> -->
+
+
+  <!-- Launch ROS Node for map_recon_node-->
+  <node pkg="dynamap" type="dynamap_node" name="dynamap_node" output="screen" >
+    <rosparam command="load" file="$(find dynamap)/config/cameraParams.yaml"/>
+    <rosparam command="load" file="$(find dynamap)/config/tsdfParams.yaml"/>
+    <rosparam command="load" file="$(find dynamap)/config/gnOptimParams.yaml"/>
+    <rosparam command="load" file="$(find dynamap)/config/bilateralFParams.yaml"/>
+  </node>
+
+</launch>
+

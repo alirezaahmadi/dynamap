@@ -10,11 +10,49 @@ namespace DynaMap{
 
 namespace utils{
 
-    dataSet::dataSet(){
+    dataSet::dataSet(std::string mainDir){
+
         curID = 0;
         groundTruthExist = false;
         assciateFileExist = false;
+
+        std::string rgbFolder = "/rgb/";
+        std::string depthFolder = "/depth/";
+        std::string groundTruthFileName = "/groundtruth.txt";
+        std::string associationFileName = "/association.txt";
+
+        //  check for assocation file
+        // this->assciateFileExist =  
+        // std::cout << "Assocition: " << Dataset.assciateFileExist << std::endl; 
+
+        this->groundTruthFileAddress = mainDir + groundTruthFileName;
+        this->associationFileAddress = mainDir + associationFileName;
+        this->PreSufixCheck = true;
+        this->rgbFolderAddress = mainDir + rgbFolder;
+        this->depthFolderAddress = mainDir + depthFolder;
+
+        // this->depthPrefix = "frame";
+        // this->rgbPrefix = "frame";
+        // this->rgbSuffix = ".png";
+        // this->depthSuffix = ".png";
+
+        // TUM
+        this->depthPrefix = "";
+        this->rgbPrefix = "";
+        this->rgbSuffix = ".png";
+        this->depthSuffix = ".png";
+
+        // this->depthPrefix = "depth_";
+        // this->rgbPrefix = "color_";
+        // this->rgbSuffix = ".png";
+        // this->depthSuffix = ".png";
+
+        this->curID = 0;
+        // this->sensor = sensor;
+        this->loadData();
+  
     }
+
     dataSet::~dataSet(){}
 
     bool dataSet::loadData(void){

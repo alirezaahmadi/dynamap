@@ -62,7 +62,7 @@ class dataSet{
 
     frame image;
     
-    dataSet();
+    dataSet(std::string mainDir);
     virtual ~dataSet();
 
     bool loadData(void);

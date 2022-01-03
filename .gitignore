@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 
+bin/
 # forlders 
 build/
 devel/

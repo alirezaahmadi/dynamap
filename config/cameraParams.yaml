@@ -1,0 +1,10 @@
+# Initializing RGBD-Sensor **************************************************
+# TUM
+cameraParams:
+ - f.x: 525.0
+ - f.y: 525.0
+ - c.x: 319.5
+ - c.y: 239.5
+ - depthScale: 5000.0
+ - height: 480
+ - width: 640

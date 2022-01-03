@@ -34,7 +34,7 @@
 #include <ctime>
 #include <sstream>
 
-#include "map_recon/DynaMapMsg.h"
+#include "DynaMap.h"
 
 //#define EXACT
 #define APPROXIMATE
@@ -57,7 +57,7 @@ namespace DynaMap {
 class DynaMapNodeHandler {
  public:
 
-  MapRecon MapManager;
+  DynaMap MapManager;
   int it_num;
   bool FirstFrame;
 
@@ -80,7 +80,7 @@ class DynaMapNodeHandler {
   void TransformTFToEigenImpl(const tf::Transform &t, Eigen::Affine3d &e);
  private:
   bool ReadConfig_map();
-  bool ReadConfig_run(MapRecon& Map_manager);
+  bool ReadConfig_run(DynaMap& Map_manager);
 
   // ROS node handle.
   ros::NodeHandle nodeHandle_;
@@ -121,7 +121,7 @@ class DynaMapNodeHandler {
   std::vector<float> d_errors;
   std::vector<float> t_errors;
 
-  map_recon::DynaMapMsg DynaMapMsg;
+  // DynaMap::dynaMapMsg dynaMapMsg;
 
 
 };

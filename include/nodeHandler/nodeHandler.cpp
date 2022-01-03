@@ -1,11 +1,11 @@
-#include "nodehandler.h"
+#include "nodeHandler.h"
 
 
 using namespace std;
 using namespace message_filters;
 using namespace Eigen;
 
-namespace map_recon {
+namespace DynaMap {
 
 DynaMapNodeHandler::DynaMapNodeHandler(ros::NodeHandle& nodeHandle) : nodeHandle_(nodeHandle) {
   
@@ -14,26 +14,22 @@ DynaMapNodeHandler::DynaMapNodeHandler(ros::NodeHandle& nodeHandle) : nodeHandle
     ROS_ERROR("Could not read parameters.");
     ros::requestShutdown();
   }
-  MapManager.ReadConfig_run(nodeHandle);
+  MapManager.loadConfigs(nodeHandle);
 
-  DynaMapMsg.frame_num = 0;
-  DynaMapMsg.iteration_num = 0;
-  DynaMapMsg.t_error = 0.0;
-  DynaMapMsg.rmse = 0.0;
+  // dynaMapMsg.frame_num = 0;
+  // dynaMapMsg.iteration_num = 0;
+  // dynaMapMsg.t_error = 0.0;
+  // dynaMapMsg.rmse = 0.0;
 
   subscriber_depth.subscribe( nodeHandle , depth_image_SubscriberTopic , 500 );
   subscriber_rgb.subscribe( nodeHandle , rgb_image_SubscriberTopic , 500 );
 
-  pcl_Publisher_ = nodeHandle_.advertise<pcl::PointCloud<pcl::PointXYZRGB>> (pcl_PublisherTopic, 1);
-  map_Publisher_ = nodeHandle_.advertise<pcl::PointCloud<pcl::PointXYZRGB>> (map_PublisherTopic, 1);
-  depth_image_Publisher_ = nodeHandle_.advertise<sensor_msgs::Image>(depthImage_PublisherTopic, 1);
-
   marker_pub = nodeHandle_.advertise<visualization_msgs::Marker>("Vmarker", 10);
-  Log_pub = nodeHandle_.advertise<map_recon::DynaMapMsg>("DynaMapMsg", 1);
+  // Log_pub = nodeHandle_.advertise<DynaMap::dynaMapMsg>("dynaMapMsg", 1);
 
   // ExactTime or ApproximateTime take a queue size as its constructor argument, hence MySyncPolicy(10)
   sync_.reset(new sync(MySyncPolicy(10), subscriber_rgb, subscriber_depth ));
-  sync_->registerCallback(boost::bind(&map_recon::DynaMapNodeHandler::kinect_callback, this, _1, _2));
+  sync_->registerCallback(boost::bind(&DynaMap::DynaMapNodeHandler::kinect_callback, this, _1, _2));
   ROS_INFO("Successfully launched node.");
 }
 
@@ -83,16 +79,16 @@ void DynaMapNodeHandler::Evaluatation(string frame_id, string reference_frame_id
   translation_error += gt_Translation - s_Translation;
   float distant_e = sqrt(pow((gt_tf(0,3)-source_tf(0,3)),2)+pow((source_tf(1,3)-gt_tf(1,3)),2)+pow((gt_tf(2,3)-source_tf(2,3)),2));
   t_errors.push_back(distant_e);
-  DynaMapMsg.t_error += distant_e;
-  DynaMapMsg.avg_t_error = accumulate( t_errors.begin(), t_errors.end(), 0.0)/t_errors.size();
+  // dynaMapMsg.t_error += distant_e;
+  // dynaMapMsg.avg_t_error = accumulate( t_errors.begin(), t_errors.end(), 0.0)/t_errors.size();
   
-  Rotation_error = (s_Rotation*gt_Rotation.transpose()) * Rotation_error.transpose();
+  // Rotation_error = (s_Rotation*gt_Rotation.transpose()) * Rotation_error.transpose();
 
-  d_errors.push_back(pow(distant_e,2));
-  DynaMapMsg.rmse = sqrt(std::accumulate(d_errors.begin(), d_errors.end(), 0.0)/DynaMapMsg.frame_num);
+  // d_errors.push_back(pow(distant_e,2));
+  // dynaMapMsg.rmse = sqrt(std::accumulate(d_errors.begin(), d_errors.end(), 0.0)/dynaMapMsg.frame_num);
 
-  DynaMapMsg.avg_runtime = accumulate( runtimes.begin(), runtimes.end(), 0.0)/runtimes.size();
-  Log_pub.publish(DynaMapMsg);
+  // dynaMapMsg.avg_runtime = accumulate( runtimes.begin(), runtimes.end(), 0.0)/runtimes.size();
+  // Log_pub.publish(dynaMapMsg);
 }
 
 Matrix4f DynaMapNodeHandler::lookupTransformToEigen(string frame_id, string reference_frame_id ,tf::StampedTransform _transform){
@@ -206,59 +202,59 @@ void DynaMapNodeHandler::kinect_callback(const sensor_msgs::ImageConstPtr& msg_d
   cv::Mat new_depth_img(img_ptr_depth->image.rows, img_ptr_depth->image.cols, CV_32FC1);
   new_depth_img = img_ptr_depth->image;
 
-  if(DynaMapMsg.frame_num < MapManager.frame_num ){  
+  // if(dynaMapMsg.frame_num < MapManager.frame_num ){  
 
-    DynaMapMsg.frame_num++;
+  //   dynaMapMsg.frame_num++;
 
-    if(MapManager.RegOK){
+  //   if(MapManager.RegOK){
 
-        // estimates the passed time from the moment which raw images are 
-        // received to this point which registration of the frame is done.
-        clock_t end = clock();
-        DynaMapMsg.runtime = float(end - begin) / CLOCKS_PER_SEC;
-        runtimes.push_back(DynaMapMsg.runtime);
+  //       // estimates the passed time from the moment which raw images are 
+  //       // received to this point which registration of the frame is done.
+  //       clock_t end = clock();
+  //       dynaMapMsg.runtime = float(end - begin) / CLOCKS_PER_SEC;
+  //       runtimes.push_back(dynaMapMsg.runtime);
 
 
-        if(MapManager.CorPointSamMode == 2 || MapManager.CorPointSamMode == 1){
-          MapManager.prev_rgb_img = new_rgb_img;
-          MapManager.prev_depth_img = new_depth_img;
-          MapManager.prev_descriptors = MapManager.new_descriptors;
-          MapManager.prev_keypoints = MapManager.new_keypoints;
-          //MapManager.prev_prod = MapManager.new_prod;
-        }
+  //       if(MapManager.CorPointSamMode == 2 || MapManager.CorPointSamMode == 1){
+  //         MapManager.prev_rgb_img = new_rgb_img;
+  //         MapManager.prev_depth_img = new_depth_img;
+  //         MapManager.prev_descriptors = MapManager.new_descriptors;
+  //         MapManager.prev_keypoints = MapManager.new_keypoints;
+  //         //MapManager.prev_prod = MapManager.new_prod;
+  //       }
 
-        MapManager.clone_pcl(MapManager.prev_cloud, MapManager.curr_cloud);
+  //       MapManager.clone_pcl(MapManager.prev_cloud, MapManager.curr_cloud);
 
-        // updates and Publishes the TF-tree with estimated frame 
-        // of the kinect sensor with name /sensor
-        if(MapManager.Publish_TF){
-          tf_publisher(MapManager.frame_id, MapManager.child_frame_id,
-           ros::Time::now() , MapManager.prevResultTrans);
-        }
+  //       // updates and Publishes the TF-tree with estimated frame 
+  //       // of the kinect sensor with name /sensor
+  //       if(MapManager.Publish_TF){
+  //         tf_publisher(MapManager.frame_id, MapManager.child_frame_id,
+  //          ros::Time::now() , MapManager.prevResultTrans);
+  //       }
 
-        // estimates the lines between the corresponding point in both 
-        // point-clouds and publishes them to be visulized in rviz
-        if(MapManager.Publish_line){ 
-          MapManager.Buffer_Lines(MapManager.line_list);
-          marker_pub.publish(MapManager.line_list);
-          MapManager.line_list.points.clear();
-        }
+  //       // estimates the lines between the corresponding point in both 
+  //       // point-clouds and publishes them to be visulized in rviz
+  //       if(MapManager.Publish_line){ 
+  //         MapManager.Buffer_Lines(MapManager.line_list);
+  //         marker_pub.publish(MapManager.line_list);
+  //         MapManager.line_list.points.clear();
+  //       }
         
-        MapManager.RegOK = false;
+  //       MapManager.RegOK = false;
 
-        // computes and publishes the evaluation parameters
-        if(MapManager.En_Evaluatation)Evaluatation(MapManager.frame_id, MapManager.child_frame_id, MapManager.prevResultTrans);
-    }
+  //       // computes and publishes the evaluation parameters
+  //       if(MapManager.En_Evaluatation)Evaluatation(MapManager.frame_id, MapManager.child_frame_id, MapManager.prevResultTrans);
+  //   }
 
     // print out the debug and log values in the terminal.
-    if(MapManager.DebuggLogShow) 
-      cout <<"IN: "<< DynaMapMsg.iteration_num <<
-             " TNP: " << MapManager.curr_cloud->points.size() << 
-             " FNum: " << DynaMapMsg.frame_num << 
-             " RT: " << DynaMapMsg.runtime << 
-             " AVG-RT: " << DynaMapMsg.avg_runtime << 
-             " TE: " << DynaMapMsg.t_error << endl;
-  }
+    // if(MapManager.DebuggLogShow) 
+      // cout <<"IN: "<< dynaMapMsg.iteration_num <<
+      //        " TNP: " << MapManager.curr_cloud->points.size() << 
+      //        " FNum: " << dynaMapMsg.frame_num << 
+      //        " RT: " << dynaMapMsg.runtime << 
+      //        " AVG-RT: " << dynaMapMsg.avg_runtime << 
+      //        " TE: " << dynaMapMsg.t_error << endl;
+  // }
 }
 
-}  // namespace map_recon ... 
+}  // namespace DynaMap ... 

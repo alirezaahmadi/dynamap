@@ -47,7 +47,7 @@ gaussianKernal gKernel;
 solver::Properties OptimizerProp;
 float4x4 initialPose;
 rgbdImage deviceImage;
-utils::dataSet Dataset;
+utils::dataSet Dataset("");
 tsdf::tsdfProperties tsdfProp;
 builder mapBuilder;
 pyramid pyDown;

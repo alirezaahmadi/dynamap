@@ -1,0 +1,12 @@
+# Initializing GaussNewton LS Properties ************************************
+gnOptimParams:
+ - lvlIterationNum[0]: 0
+ - lvlIterationNum[1]: 0
+ - lvlIterationNum[2]: 20
+ - lvlScale[0]: 4
+ - lvlScale[1]: 2
+ - lvlScale[2]: 1
+ - minIncrement: 0.001
+ - maxIncrement: 0.3
+ - regularization: 0.02
+ - huberConstant: 0.3

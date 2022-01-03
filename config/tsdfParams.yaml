@@ -1,0 +1,11 @@
+# TSDF Representation Config ***********************************************
+tsdfParams:
+  - voxelSize: 0.01
+  - numBuckets: 2500
+  - bucketSize: 10
+  - numBlocks: 25000
+  - blockSize: 8
+  - maxSDFWeight: 64
+  - truncationDistance: 0.05
+  - maxSensorDepth: 5.0
+  - minSensorDepth: 0.3
