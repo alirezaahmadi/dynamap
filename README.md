@@ -1,5 +1,5 @@
 # DynaMap
-## Project : Registration Techniques for Non-rigid Objects
+## Project : Registration Techniques for Non-rigid Objects (C++, CUDA Implementation)
 by: Alireza Ahamdi, 
 
 ### Youtube Demo On rigid Mapping
