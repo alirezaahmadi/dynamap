@@ -34,7 +34,7 @@
 #include <ctime>
 #include <sstream>
 
-#include "DynaMap.h"
+#include "include/dynaMap/dynaMap.h"
 
 //#define EXACT
 #define APPROXIMATE
