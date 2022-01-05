@@ -2,12 +2,19 @@
 ## Project : Registration Techniques for Non-rigid Objects (C++, CUDA Implementation)
 by: Alireza Ahamdi, 
 
-### Youtube Demo On rigid Mapping
+The DynaMap is a purely C++/CUDA mapping framework which I developed within 6 months during my master Thesis in Institute of Photogrametry and Robotics of University of Bonn (IPB). It overall includes two major parts (rigid and Non-rigid Mapping) with so many stand alone accelerated (pure CUDA based) libraries which I implemented from scratch like (dual-quaternions, Meshing, Rasterising, raycasting, Mesh Blending, different Data structures, KDtee and KNN and more).
+The rigid section is tested with famous RGBD datasets like TUM, IPB captures achieving state of the art performances (both in speed and accuracy) and the non-rigid part due to complexity could be tested only on synthetic.
+
+I will try to put more explanation of the code now and later in this repo so any contributions is really appreciate!
+
+so feel free to reach-out and enjoy coding.. 
+
+## Youtube Demo On rigid Mapping
 
 <div align="center">
-	
+
 [![YouTube Demo1](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CKLuvI0G&rs=AOn4CLBC9fBXmokbUYNog4GzBFnTqiv2Mg)](https://www.youtube.com/watch?v=Nr2SV6QNiAs)
-	
+
 </div>
 
 <div align="center">
@@ -18,6 +25,8 @@ by: Alireza Ahamdi,
 
  ----
  
+## General problem explanation:
+
 In general, the problem of non-rigid registration is about matching two different
 scans of a dynamic object taken at two different points in time. These scans
 can undergo both rigid motions and non-rigid deformations. Since new parts

@@ -225,13 +225,13 @@ namespace utils{
             rgbFileNames[curID] = rgbFolderAddress + rgbPrefix + rgbFileNames[curID] + rgbSuffix;
             // std:: cout << rgbFileNames[curID] << std::endl;
             image.rgb = cv::imread(rgbFileNames[curID], 
-                                        CV_LOAD_IMAGE_COLOR);
+                                        cv::IMREAD_COLOR);
         }
         if(depthFileNames.size() != 0){
             depthFileNames[curID] = depthFolderAddress + depthPrefix + depthFileNames[curID] + depthSuffix;
             // std:: cout << depthFileNames[curID] << std::endl;
             image.depth = cv::imread(depthFileNames[curID], 
-                                          CV_LOAD_IMAGE_ANYDEPTH);
+                                          cv::IMREAD_COLOR);
             image.depth.convertTo(image.depth, CV_32FC1, 1.0f / sensor.depthScaler);
         }
     }
