@@ -13,13 +13,13 @@ so feel free to reach-out and enjoy coding..
 
 <div align="center">
 
-[![YouTube Demo1](https://i.ytimg.com/an_webp/Nr2SV6QNiAs/mqdefault_6s.webp?du=3000&sqp=CKLuvI0G&rs=AOn4CLBC9fBXmokbUYNog4GzBFnTqiv2Mg)](https://www.youtube.com/watch?v=Nr2SV6QNiAs)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/cDG6tOieziQ/0.jpg)](https://www.youtube.com/watch?v=cDG6tOieziQ)
 
 </div>
 
 <div align="center">
 	
-[![YouTube Demo](https://i.ytimg.com/an_webp/cDG6tOieziQ/mqdefault_6s.webp?du=3000&sqp=CKzhvI0G&rs=AOn4CLCNhiqWK1_6RaUk-g5Dw3olds6eZA)](https://www.youtube.com/watch?v=cDG6tOieziQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Nr2SV6QNiAs/0.jpg)](https://www.youtube.com/watch?v=Nr2SV6QNiAs)
 	
 </div>
 
